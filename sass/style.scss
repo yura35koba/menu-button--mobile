@@ -1,0 +1,130 @@
+$text-color: rgb(26, 26, 26);
+$white: #fff;
+$btn-color: rgb(0, 163, 212);
+
+
+
+html, body{
+	margin: 0;
+	padding: 0;
+	font-size: 10px;
+	background-color: darken($text-color, 30%);
+}
+
+a{
+	text-decoration: none;
+
+}
+
+.header{
+	padding-top: 2rem;
+}
+.nav-link{
+	display: block;
+	width: 50px;
+	height: 50px;
+	background-color: grey;
+	position: relative;
+	float: right;
+	margin-right: 40px;
+	margin-left: -10px;
+}
+
+.hidden_lg-none{
+	@media (min-width: 992px) {
+		display: none;
+	}
+}
+
+
+//крестик для закрытие нав-меню
+.navigation-close{
+	color: white;
+	position: absolute;
+	top: 2rem;
+	right: 4rem;
+	font-size: 5rem;
+	&:hover{
+		cursor: pointer;
+	}
+}
+//Прописываем стили для кнопки-гамбургер
+.nav-line{
+	content: '';
+	display: block;
+	background-color: white;
+	width: 20px;
+	height: 2px;
+	position: relative;
+	left: 50%;
+	top: 50%;
+	margin-left: -10px;
+
+}
+.nav-line:before{
+	content: '';
+	display: block;
+	background-color: white;
+	width: 20px;
+	height: 2px;
+	position: relative;
+	transform: translateY(-6px);
+}
+.nav-line:after{
+	content: '';
+	display: block;
+	background-color: white;
+	width: 20px;
+	height: 2px;
+	position: relative;
+	transform: translateY(4px);
+}
+//закончились стили для кнопки-гамбургер
+.navigation-mobile{
+	transform: translateX(100%);
+	position: fixed;
+	left: 0;
+	top: 0;
+	background-color: $btn-color;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	ul{
+		height: 60%;
+		list-style-type: none;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+	a{
+		display: block;
+		color: white;
+		font-size: 2rem;
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+	&_active{
+		transform: translateX(0);
+	}
+}
+
+.navigation-desktop{
+	display: none;
+	@media (min-width: 992px) {
+		display: flex;
+		justify-content: space-around;
+		align-items: center;
+		list-style-type: none;
+
+		a{
+			color: white;
+			text-decoration: none;
+			font-size: 2rem;
+		}
+
+	}
+}
+
